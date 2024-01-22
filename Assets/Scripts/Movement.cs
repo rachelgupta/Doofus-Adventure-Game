@@ -14,19 +14,19 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey("up"))
+        if(Input.GetKey("up") || Input.GetKey("w"))
         {
             rb.velocity = new Vector3(-5, 0, 0);
         }
-        if (Input.GetKey("down"))
+        if (Input.GetKey("down") || Input.GetKey("s"))
         {
             rb.velocity = new Vector3(5, 0, 0);
         }
-        if (Input.GetKey("left"))
+        if (Input.GetKey("left") || Input.GetKey("a"))
         {
             rb.velocity = new Vector3(0, 0, -5);
         }
-        if (Input.GetKey("right"))
+        if (Input.GetKey("right") || Input.GetKey("d"))
         {
             rb.velocity = new Vector3(0, 0, 5);
         }
