@@ -16,19 +16,19 @@ public class Movement : MonoBehaviour
     {
         if(Input.GetKey("up") || Input.GetKey("w"))
         {
-            rb.velocity = new Vector3(-5, 0, 0);
+            rb.velocity = new Vector3(-6, 0, 0);
         }
         if (Input.GetKey("down") || Input.GetKey("s"))
         {
-            rb.velocity = new Vector3(5, 0, 0);
+            rb.velocity = new Vector3(6, 0, 0);
         }
         if (Input.GetKey("left") || Input.GetKey("a"))
         {
-            rb.velocity = new Vector3(0, 0, -5);
+            rb.velocity = new Vector3(0, 0, -6);
         }
         if (Input.GetKey("right") || Input.GetKey("d"))
         {
-            rb.velocity = new Vector3(0, 0, 5);
+            rb.velocity = new Vector3(0, 0, 6);
         }
     }
 }

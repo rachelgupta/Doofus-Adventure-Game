@@ -18,16 +18,4 @@ public class Scoreincrease : MonoBehaviour
         }
         Debug.Log("h");
     }
-    /*
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("ScoreObject"))
-        {
-            score++;
-            Scoring.text = "Score: " + score;
-            Debug.Log(score);
-        }
-        Debug.Log("h");
-    }
-    */
 }
