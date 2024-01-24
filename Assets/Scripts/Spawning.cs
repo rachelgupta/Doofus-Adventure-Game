@@ -5,10 +5,11 @@ using UnityEngine;
 public class Spawn : MonoBehaviour
 {
     public GameObject platformPrefab1;
-    public GameObject platformPrefab2;
-    public float initialSpawnDelay = 2.5f;  
-    public float platformLifetime = 2.5f;
+    public GameObject ScoreObject;
+    public float initialSpawnDelay = 5f;  
+    public float platformLifetime = 4f;
     public float spawnInterval = 2.5f;
+    public float ScoreLifetime = 2.5f;
 
     private void Start()
     {
@@ -16,12 +17,14 @@ public class Spawn : MonoBehaviour
     }
     void SpawnPlatform()
     {
-        Vector3 pos1 = platformPrefab2.transform.position;
+        Vector3 pos1 = platformPrefab1.transform.position;
         Vector3 randompos = RandomDirection();
         Vector3 posi = new Vector3(pos1.x + randompos.x, 0, pos1.z + randompos.z);
-        GameObject newPlatform = Instantiate(platformPrefab2, posi, Quaternion.identity);
+        GameObject newPlatform = Instantiate(platformPrefab1, posi, Quaternion.identity);
+        GameObject scoreCard = Instantiate(ScoreObject, posi, Quaternion.identity);
         Destroy(newPlatform, platformLifetime);
-        platformPrefab2.transform.position = posi;
+        Destroy(scoreCard, ScoreLifetime);
+        platformPrefab1.transform.position = posi;
     }
     Vector3 RandomDirection()
     {
