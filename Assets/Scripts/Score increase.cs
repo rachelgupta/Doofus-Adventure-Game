@@ -14,8 +14,6 @@ public class Scoreincrease : MonoBehaviour
         {
             score++;
             Scoring.text = "Score: " + score;
-            Debug.Log(score);
         }
-        Debug.Log("h");
     }
 }
