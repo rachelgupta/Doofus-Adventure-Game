@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Scoreincrease : MonoBehaviour
 {
@@ -14,6 +15,14 @@ public class Scoreincrease : MonoBehaviour
         {
             score++;
             Scoring.text = "Score: " + score;
+            if(score>PlayerPrefs.GetInt("HighScore",0))
+            {
+                PlayerPrefs.SetInt("HighScore", score);
+            }
+            if (score >= 50)
+            {
+                SceneManager.LoadScene(3);
+            }
         }
     }
 }
